@@ -1,0 +1,25 @@
+{
+  "name": "mm204",
+  "version": "1.0.0",
+  "description": "MM 204 Programming Assignment",
+  "main": "main.js",
+  "build": {
+    "appId": "mm204.assignment",
+    "icon": "icon/app.ico",
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "author": "shibashis sahoo",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.6",
+    "electron-builder": "^22.11.1",
+    "axios": "^0.21.1"
+  },
+  "dependencies": {}
+}

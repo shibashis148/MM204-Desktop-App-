@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Heat Transfer MM204</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" /> -->
+ <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+ <!-- Compiled and minified JavaScript -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+       <link rel="stylesheet" href="../assets/styles/index.css" />
+       
+    
+               
+</head>
+<body >
+   <section id="title-bar">
+    <nav>
+        <div class="nav-wrapper indigo darken-4">
+          <a  class="left brand"><strong>MM204 ASSIGNMENT</strong></a>
+                
+            </i>
+
+          </a>
+          <ul  class="right " id="title__bar__buttons">
+           
+            <li ><a  class="titl__btn" id="minimizeWindow"> <i class="material-icons">remove
+                
+                </i></a></li>
+            <li ><a  class="titl__btn" id="closeWindow"> <i class=" material-icons">close</i></a></li>
+          </ul>
+        </div>
+      </nav>
+   </section>
+
+<br>
+<br>
+<div  style="margin-top:60px; padding:10px">
+
+<div class="row">
+  <div class="col s6"> 
+    <div class="row">
+      <form class="col s12">
+          <center><strong>Constants</strong></center>
+         
+          <br>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input  required disabled value="1200 kg/m3" id="first_name" type="text" class="validate">
+            <label for="first_name">Density</label>
+          </div>
+          <div class="input-field col s6">
+            <input  required disabled value="0.30 W/m.K" id="last_name" type="text" class="validate">
+            <label for="last_name">Thermal Conductivity</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="input-field col s6">
+            <input  required disabled value="60 mm" id="first_name" type="text" class="validate">
+            <label for="first_name">Slab Length<label>
+          </div>
+          <div class="input-field col s6">
+            <input  required disabled value="100 W/m^2.K" id="last_name" type="text" class="validate">
+            <label for="last_name">Convection Coefficient</label>
+          </div>
+        </div>
+
+        <center><strong>Customizable</strong></center>
+        <br>
+        <div class="row">
+          <div class="input-field col s6">
+            <input  min="1" required value="20" id="air_jet_temp" type="number" class="validate">
+            <label for="air_jet_temp">Air Jet Temp (celcius)<label>
+          </div>
+          <div class="input-field col s6">
+            <input min="1" required value="80" id="salb_temp" type="number" class="validate">
+            <label for="salb_temp">Slab Temp (celcius)</label>
+          </div>
+        </div>
+        <center>
+          <div class="row">
+              <div class="input-field col s6">
+                  <input  min="1" required value="1" id="exposure_time" type="number" class="validate">
+                  <label for="exposure_time">Exposure Time To Gas Jet (hr)<label>
+                </div>
+                <div class="col s6">
+                  <button id="calculate" class="btn waves-effect  pulse red waves-light" type="submit" name="action">Calculate
+                      <i class="material-icons  right">send</i>
+                    </button>
+                </div>
+          </div>
+
+          
+      
+        </center>
+      </form>
+    </div>
+  </div>
+  <div class="col s6 result"> 
+
+    <div id="pre__loader">
+      <center>
+          <div class="container">
+             <div class="progress">
+               <div class="indeterminate"></div>
+           </div>
+           <small><strong>Result Will Be Displayed Here</strong></small>
+          </div>
+
+       
+       </center>
+     </div>
+     <div id="result">
+      <center>
+          <div class="container">
+              <table class="striped" >
+                  <thead>
+                    <tr>
+                        <th>Part Of The Slab</th>
+                        <th>Temparature (Kelvin)</th>
+                       
+                    </tr>
+                  </thead>
+          
+                  <tbody>
+                    <tr>
+                      <td>Cooler Surface</td>
+                      <td id="top">0</td>
+                    </tr>
+                    <tr>
+                      <td>Insulated Surface</td>
+                      <td id="bottom">0</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                
+          </div>
+      </center>
+  </div>
+  </div>
+</div>
+
+    
+            
+
+  
+</body>
+
+
+<script id="myscript" xvalue="[]" yvalue="[]">
+  var layout = {
+    autosize: false,
+    width: 500,
+    height: 500,
+    xaxis: {
+        title: 'Time in (sec)',},
+        yaxis: {
+            title: 'Temp in (k)',}
+    
+  };
+  Plotly.newPlot( document.getElementById("plot2"), [{
+    y:document.getElementById("myscript").getAttribute("yvalue").split(",").map(a=>parseInt(a)) ,
+    x:document.getElementById("myscript").getAttribute("xvalue").split(",").map(a=>parseInt(a) )}],layout  )
+</script>  
+</html>
