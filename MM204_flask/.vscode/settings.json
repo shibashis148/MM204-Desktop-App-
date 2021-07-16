@@ -1,0 +1,5 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "C:\\Users\\shiba\\.virtualenvs\\MM204_server-0RRAaySs\\Scripts\\python.exe",
+    "python.formatting.provider": "yapf"
+}
